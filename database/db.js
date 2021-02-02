@@ -29,4 +29,4 @@ const randomDelay = () =>
         setTimeout(resolve, delay)
     })
 
-export default DataBase;
+module.exports.DataBase
