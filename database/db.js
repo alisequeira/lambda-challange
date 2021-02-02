@@ -1,4 +1,4 @@
-const allData = required('./data.json');
+const allData = require('./data.json');
 
 class DataBase {
     constructor() { }
