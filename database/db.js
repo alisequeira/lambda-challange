@@ -1,8 +1,6 @@
 const allData = require('./data.json');
 
 const DataBase = {
-    // constructor() { }
-
     getAll: async () => {
         const asArray = Object.values(allData);
         await randomDelay();
@@ -11,20 +9,11 @@ const DataBase = {
     getByZipCode: async (zip) => {
 
         const results = Object.values(allData);
-        const zipResults = results.filter((item) => item.zip.includes(zip))
+        const zipResults = results.filter((item) => item.zip.includes(zip));
+        await randomDelay();
         return zipResults;
     }
-
-    // await randomDelay();
-    // return zipResults;
 }
-
-// return {
-//     getAll,
-//     getByZipCode
-// }
-
-
 
 const randomDelay = () =>
     new Promise((resolve) => {
