@@ -1,24 +1,30 @@
 const allData = require('./data.json');
 
-class DataBase {
-    constructor() { }
+const DataBase = {
+    // constructor() { }
 
-    async getAll() {
+    getAll: async () => {
         const asArray = Object.values(allData);
         await randomDelay();
         return asArray;
-    }
+    },
+    getByZipCode: async (zip) => {
 
-    async getByZipCode(zip) {
         const results = Object.values(allData);
-        const zipResults = results.filter((item) => {
-            return item.zip.includes(zip)
-        })
-        await randomDelay();
+        const zipResults = results.filter((item) => item.zip.includes(zip))
         return zipResults;
     }
 
+    // await randomDelay();
+    // return zipResults;
 }
+
+// return {
+//     getAll,
+//     getByZipCode
+// }
+
+
 
 const randomDelay = () =>
     new Promise((resolve) => {
@@ -29,4 +35,4 @@ const randomDelay = () =>
         setTimeout(resolve, delay)
     })
 
-module.exports.DataBase
+module.exports = { DataBase }

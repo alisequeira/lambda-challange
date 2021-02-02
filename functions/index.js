@@ -1,9 +1,9 @@
-const DB = require('../database/db');
+const { DataBase } = require('../database/db');
 
 
 module.exports.handler = async (event, context) => {
-    const db = new DB();
-    const allEntries = await db.getAll();
+    const db = DataBase;
+    const allEntries = await DataBase.getAll();
     const length = allEntries.length;
     console.log(allEntries);
     return {
