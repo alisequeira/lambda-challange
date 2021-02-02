@@ -88,3 +88,19 @@ After you submit the completed project, we will schedule a follow-up code-review
 | :------------------- | :--------------------------- |
 | `npm run format:fix` | format files with "prettier" |
 | `npm run test`       | execute tests with "jest"    |
+
+
+# Answers 
+1.Create a database directory where I place data.json file and a db.js file that simulate a database methods.
+2.In functions directory are located all the lambda type function handler.
+
+To run this locally, have to install netlify-cli using npm install -g netlify-cli
+
+# API endpoints 
+
+To get all data: /api/index
+To search by zip: /api/getByZipCode?zip=variable
+To search by City: /api/getByCity?city=variable
+to search by Longitude and Latitude : api/getByLatAndLong?lon=variable&lat=variable
+to search by any additional filter: api/getByAdditional/?state=variable&country=?&...etc
+
