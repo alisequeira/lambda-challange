@@ -98,9 +98,9 @@ To run this locally, have to install netlify-cli using npm install -g netlify-cl
 
 # API endpoints 
 
-To get all data: /api/index
-To search by zip: /api/getByZipCode?zip=variable
-To search by City: /api/getByCity?city=variable
-to search by Longitude and Latitude : api/getByLatAndLong?lon=variable&lat=variable
-to search by any additional filter: api/getByAdditional/?state=variable&country=?&...etc
+- To get all data: /api/index
+- To search by zip: /api/getByZipCode?zip=variable
+- To search by City: /api/getByCity?city=variable
+- To search by Longitude and Latitude : api/getByLatAndLong?lon=variable&lat=variable
+- To search by any additional filter: api/getByAdditional/?state=variable&country=?&...etc
 
