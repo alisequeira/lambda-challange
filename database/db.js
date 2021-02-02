@@ -12,6 +12,12 @@ const DataBase = {
         const zipResults = results.filter((item) => item.zip.includes(zip));
         await randomDelay();
         return zipResults;
+    },
+    getByCity: async (city) => {
+        const results = Object.values(allData);
+        const cityResults = results.filter((item) => item.primary_city.includes(city));
+        await randomDelay();
+        return cityResults;
     }
 }
 
