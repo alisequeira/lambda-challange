@@ -1,4 +1,4 @@
-import allData from './data.json';
+const allData = required('./data.json');
 
 class DataBase {
     constructor() { }
