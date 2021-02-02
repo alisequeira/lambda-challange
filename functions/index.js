@@ -2,7 +2,7 @@ const DB = require('../database/db');
 
 
 module.exports.handler = async (event, context) => {
-    const db = DB();
+    const db = new DB();
     const allEntries = await db.getAll();
     const length = allEntries.length;
     console.log(allEntries);
