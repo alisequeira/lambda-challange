@@ -4,7 +4,6 @@ module.exports.handler = async event => {
     try {
         const zip = event.queryStringParameters.zip
         const zipResults = await DataBase.getByZipCode(zip);
-        console.log(zipResults)
         const length = zipResults.length;
         return {
             statusCode: 200,

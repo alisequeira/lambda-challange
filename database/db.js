@@ -7,11 +7,18 @@ const DataBase = {
         return asArray;
     },
     getByZipCode: async (zip) => {
-
+        let zipResults
         const results = Object.values(allData);
-        const zipResults = results.filter((item) => item.zip.includes(zip));
+        if (zip.length <= 3) {
+            zipResults = results.filter((item) => {
+                return item.zip.split("").slice(0, 3).join('') === zip
+            });
+        } else {
+            zipResults = results.filter((item) => item.zip.includes(zip));
+        }
         await randomDelay();
         return zipResults;
+
     },
     getByCity: async (city) => {
         const results = Object.values(allData);
