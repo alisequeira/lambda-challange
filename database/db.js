@@ -26,6 +26,13 @@ const DataBase = {
         await randomDelay();
         return cityResults;
     },
+    getByLonAndLat: async (lo, lat) => {
+        const results = Object.values(allData);
+        const test = results.filter((item) => item.latitude === lat && item.longitude === lo)
+        const resultLength = randomNumber(test.length);
+        return [test[0], test[resultLength]];
+
+    },
     getByAdditional: async ({ type, state, country, timezone, areaCode, population }) => {
         if (type) {
             await randomDelay();
@@ -81,7 +88,10 @@ const searchPopulation = (population) => {
     const results = options.filter((item) => item.estimated_population === population);
     return results;
 }
-const randomDelay = () =>
+const randomNumber = (max) => {
+    return Math.floor(Math.random() * Math.floor(max));
+}
+const randomDelay = () => {
     new Promise((resolve) => {
         const max = 350
         const min = 100
@@ -89,5 +99,5 @@ const randomDelay = () =>
 
         setTimeout(resolve, delay)
     })
-
+}
 module.exports = { DataBase }
