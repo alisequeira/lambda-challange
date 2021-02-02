@@ -28,3 +28,5 @@ const randomDelay = () =>
 
         setTimeout(resolve, delay)
     })
+
+export default DataBase;
