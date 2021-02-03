@@ -10,7 +10,7 @@ module.exports.handler = async event => {
         const length = nearest.length;
         return {
             statusCode: 200,
-            body: JSON.stringify({ message: 'Data success', data: nearest, length })
+            body: JSON.stringify({ message: 'Data Founded', data: nearest, length })
         }
     } catch (err) {
         console.log(err)

@@ -8,7 +8,7 @@ module.exports.handler = async event => {
         const length = cityResults.length;
         return {
             statusCode: 200,
-            body: JSON.stringify({ message: 'Data success', data: cityResults, length })
+            body: JSON.stringify({ message: 'City match results', data: cityResults, length })
         }
     } catch (err) {
         console.log(err)

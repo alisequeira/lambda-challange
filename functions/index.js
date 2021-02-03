@@ -1,14 +1,13 @@
 const { DataBase } = require('../database/db');
 
 
-module.exports.handler = async (event, context, next) => {
+module.exports.handler = async (event, context) => {
     try {
         const allEntries = await DataBase.getAll();
         const length = allEntries.length;
-        console.log(allEntries);
         return {
             statusCode: 200,
-            body: JSON.stringify({ message: 'Data success', data: allEntries, length: length })
+            body: JSON.stringify({ message: 'All Records Success', length: length, data: allEntries })
         }
     } catch (err) {
         console.log(err);

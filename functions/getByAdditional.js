@@ -22,7 +22,7 @@ module.exports.handler = async event => {
         const length = results.length;
         return {
             statusCode: 200,
-            body: JSON.stringify({ message: 'Data success', data: results, length })
+            body: JSON.stringify({ message: 'Data founded with provider information', data: results, length })
         }
     } catch (err) {
         console.log(err)

@@ -7,9 +7,12 @@ module.exports.handler = async event => {
         const length = zipResults.length;
         return {
             statusCode: 200,
-            body: JSON.stringify({ message: 'Data success', data: zipResults, length })
+            body: JSON.stringify({ message: 'Zip Code match ', length, data: zipResults })
         }
     } catch (err) {
+        if (!err.statusCode) {
+            err.statusCode = 500;
+        }
         console.log(err)
     }
 };
